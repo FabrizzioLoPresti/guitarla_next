@@ -11,7 +11,7 @@ const ListadoBlog = ({entradas}) => {
                 {entradas.map( (entrada) => (
                     <Entrada
                         // Props de Entrada
-                        key={entrada.id}
+                        key={entrada._id}
                         entrada={entrada}
                     />
                 ))}

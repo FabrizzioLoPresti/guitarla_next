@@ -67,7 +67,7 @@ export async function getStaticPaths() {
     // Damos implicito el Return con ({})
     const paths = entradas.map(entrada => ({
         params : {
-            id: entrada.id.toString()
+            id: entrada._id.toString()
         }
     }))
 

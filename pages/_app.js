@@ -15,20 +15,20 @@ function MyApp({ Component, pageProps }) {
   }, [carrito])
 
   const agregarCarrito = (producto) => {
-    if(carrito.some(articulo => articulo.id === producto.id)) {
-      setCarrito(carrito.map(articulo => articulo.id === producto.id ? {...articulo, cantidad: producto.cantidad} : articulo))
+    if(carrito.some(articulo => articulo._id === producto._id)) {
+      setCarrito(carrito.map(articulo => articulo._id === producto._id ? {...articulo, cantidad: producto.cantidad} : articulo))
     } else {
       setCarrito([...carrito, producto])
     }
   }
 
   const actualizarCantidad = producto => {
-    setCarrito(carrito.map(articulo => articulo.id === producto.id ? {...articulo, cantidad: producto.cantidad} : articulo))
+    setCarrito(carrito.map(articulo => articulo._id === producto._id ? {...articulo, cantidad: producto.cantidad} : articulo))
   }
 
   const eliminarProducto = id => {
     // No modifico el Arreglo Original
-    const carritoActualizado = carrito.filter(articulo => articulo.id !== id)
+    const carritoActualizado = carrito.filter(articulo => articulo._id !== id)
     setCarrito(carritoActualizado)
   }
 

@@ -22,7 +22,7 @@ const Carrito = ({carrito, actualizarCantidad, eliminarProducto}) => {
                     <h2>Articulos</h2>
                     {carrito.length === 0 ? 'No hay productos en el carrito' : (
                         carrito.map(producto => (
-                            <div key={producto.id} className={styles.producto}>
+                            <div key={producto._id} className={styles.producto}>
                                 <div>
                                     <Image 
                                         src={producto.imagen}
@@ -44,7 +44,7 @@ const Carrito = ({carrito, actualizarCantidad, eliminarProducto}) => {
                                             value={producto.cantidad}
                                             className={styles.select}
                                             onChange={e => actualizarCantidad({
-                                                id: producto.id,
+                                                id: producto._id,
                                                 cantidad: e.target.value
                                             })}
                                         >
@@ -63,7 +63,7 @@ const Carrito = ({carrito, actualizarCantidad, eliminarProducto}) => {
                                 <button
                                     type="button"
                                     className={styles.eliminar}
-                                    onClick={() => eliminarProducto(producto.id)}
+                                    onClick={() => eliminarProducto(producto._id)}
                                 >
                                     X
                                 </button>
