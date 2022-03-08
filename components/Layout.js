@@ -8,7 +8,7 @@ const Layout = ({children, pagina, guitarra}) => {
     return (
         <div>
             <Head>
-                <title>GuitarLAx - {pagina}</title>
+                <title>GuitarLA - {pagina}</title>
                 <meta
                     name="description"
                     content="Sitio web de venta de guitarras y accesorios para guitarra"
